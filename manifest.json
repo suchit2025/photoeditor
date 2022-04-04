@@ -1,0 +1,21 @@
+{
+    "name": "photo editior",
+    "short_name": "photo editior",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#2A3443",
+    "description": "photo editior application",
+    "theme_color": "#2A3443",
+    "icons": [
+      {
+        "src": "./img/512X512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      },
+  {
+        "src": "./img/96X96.png",
+        "sizes": "96x96",
+        "type": "image/png"
+      }
+    ]
+  }
