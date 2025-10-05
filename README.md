@@ -49,3 +49,125 @@ photoeditor/
 ├── pixie-integrate.js   # JS integration with Pixie image editor
 ├── sw.js                # Service Worker for offline support
 └── launderer.php        # Backend for uploads / sanitization
+
+
+
+⚙️ Installation Guide
+
+🧩 Prerequisites
+
+Node.js v14+
+
+npm or yarn
+
+PHP-enabled server (Apache, Nginx + PHP-FPM)
+
+(Optional) Gulp CLI for builds
+
+npm install -g gulp
+
+1️⃣ Clone the Repository
+git clone https://github.com/suchit2025/photoeditor.git
+cd photoeditor
+
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Configure the App
+
+Edit config.json to update:
+
+Default image size / theme
+
+Backend upload endpoint (if needed)
+
+Editor settings and default values
+
+4️⃣ Start Local Development
+
+Run in development mode:
+npm run dev
+
+5️⃣ Serve via PHP (for upload / backend features)
+
+Place the project inside a PHP-enabled server (e.g., htdocs/photoeditor/).
+
+Verify that launderer.php is accessible for image uploads.
+
+6️⃣ Build for Production
+
+npm run build
+
+💡 Usage Instructions
+
+Open the app in your browser:
+http://localhost/photoeditor
+Click Upload Image or drag & drop a file.
+
+Use toolbar options to:
+
+Apply filters
+
+Adjust colors
+
+Add shapes or text
+
+Crop, rotate, resize, or annotate
+
+Save or export your final image.
+
+(Optional) Upload edited images to your server or cloud location.
+
+⚙️ Configuration Reference
+File	Description
+config.json	Controls default brush color, toolset visibility, and backend endpoints
+manifest.json	Defines PWA name, icons, theme colors
+sw.js	Manages offline caching and updates
+gulpfile.js	Automates build tasks — concatenation, minification, and optimization
+launderer.php	Sanitizes uploads and ensures security for backend image operations
+🧪 Testing Checklist
+
+✅ Browser compatibility: Chrome, Edge, Firefox, Safari
+
+✅ Offline caching test via Service Worker
+
+✅ Image upload & size validation
+
+✅ Undo/redo accuracy
+
+✅ PWA installability (manifest + HTTPS)
+
+🛠 Development Tips
+
+Use gulp watch during development for automatic rebuilds.
+
+Update pixie-integrate.js if integrating a different editor library.
+
+Clear cache after each major change to sw.js to reload service workers.
+
+Use browser dev tools → Application > Service Workers to debug offline features.
+
+🧩 Possible Enhancements
+
+✨ Add AI-based auto-enhance & background removal
+
+☁️ Cloud save/export integration (Google Drive, Dropbox, etc.)
+
+📱 Add gesture support for mobile editing
+
+🎞️ Layer-based editing (advanced mode)
+
+🧑‍💻 Electron build for offline desktop version
+
+🤝 Contributing
+
+Contributions are welcome!
+If you'd like to improve PhotoEditor:
+
+Fork the repository
+
+Create a feature branch:
+
+git checkout -b feature/new-feature
+Commit changes with clear messages
+Push and submit a Pull Request
