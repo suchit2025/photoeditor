@@ -49,125 +49,176 @@ photoeditor/
 ├── pixie-integrate.js   # JS integration with Pixie image editor
 ├── sw.js                # Service Worker for offline support
 └── launderer.php        # Backend for uploads / sanitization
+````
 
+---
 
+## ⚙️ Installation Guide
 
-⚙️ Installation Guide
+> 🧩 **Prerequisites**
+>
+> * Node.js v14+
+> * npm or yarn
+> * PHP-enabled server (Apache, Nginx + PHP-FPM)
+> * (Optional) Gulp CLI for builds
+>
+>   ```bash
+>   npm install -g gulp
+>   ```
 
-🧩 Prerequisites
+### 1️⃣ Clone the Repository
 
-Node.js v14+
-
-npm or yarn
-
-PHP-enabled server (Apache, Nginx + PHP-FPM)
-
-(Optional) Gulp CLI for builds
-
-npm install -g gulp
-
-1️⃣ Clone the Repository
+```bash
 git clone https://github.com/suchit2025/photoeditor.git
 cd photoeditor
+```
 
-2️⃣ Install Dependencies
+### 2️⃣ Install Dependencies
+
+```bash
 npm install
+```
 
-3️⃣ Configure the App
+### 3️⃣ Configure the App
 
-Edit config.json to update:
+Edit **`config.json`** to update:
 
-Default image size / theme
+* Default image size / theme
+* Backend upload endpoint (if needed)
+* Editor settings and default values
 
-Backend upload endpoint (if needed)
-
-Editor settings and default values
-
-4️⃣ Start Local Development
+### 4️⃣ Start Local Development
 
 Run in development mode:
+
+```bash
 npm run dev
+```
 
-5️⃣ Serve via PHP (for upload / backend features)
+or with Gulp:
 
-Place the project inside a PHP-enabled server (e.g., htdocs/photoeditor/).
+```bash
+gulp watch
+```
 
-Verify that launderer.php is accessible for image uploads.
+### 5️⃣ Serve via PHP (for upload / backend features)
 
-6️⃣ Build for Production
+* Place the project inside a PHP-enabled server (e.g., `htdocs/photoeditor/`).
+* Verify that `launderer.php` is accessible for image uploads.
 
+### 6️⃣ Build for Production
+
+```bash
 npm run build
+```
 
-💡 Usage Instructions
+or
 
-Open the app in your browser:
-http://localhost/photoeditor
-Click Upload Image or drag & drop a file.
+```bash
+gulp build
+```
 
-Use toolbar options to:
+---
 
-Apply filters
+## 💡 Usage Instructions
 
-Adjust colors
+1. Open the app in your browser:
 
-Add shapes or text
+   ```
+   http://localhost/photoeditor
+   ```
+2. Click **Upload Image** or drag & drop a file.
+3. Use toolbar options to:
 
-Crop, rotate, resize, or annotate
+   * Apply filters
+   * Adjust colors
+   * Add shapes or text
+   * Crop, rotate, resize, or annotate
+4. Save or export your final image.
+5. (Optional) Upload edited images to your server or cloud location.
 
-Save or export your final image.
+---
 
-(Optional) Upload edited images to your server or cloud location.
+## ⚙️ Configuration Reference
 
-⚙️ Configuration Reference
-File	Description
-config.json	Controls default brush color, toolset visibility, and backend endpoints
-manifest.json	Defines PWA name, icons, theme colors
-sw.js	Manages offline caching and updates
-gulpfile.js	Automates build tasks — concatenation, minification, and optimization
-launderer.php	Sanitizes uploads and ensures security for backend image operations
-🧪 Testing Checklist
+| File            | Description                                                             |
+| --------------- | ----------------------------------------------------------------------- |
+| `config.json`   | Controls default brush color, toolset visibility, and backend endpoints |
+| `manifest.json` | Defines PWA name, icons, theme colors                                   |
+| `sw.js`         | Manages offline caching and updates                                     |
+| `gulpfile.js`   | Automates build tasks — concatenation, minification, and optimization   |
+| `launderer.php` | Sanitizes uploads and ensures security for backend image operations     |
 
-✅ Browser compatibility: Chrome, Edge, Firefox, Safari
+---
 
-✅ Offline caching test via Service Worker
+## 🧪 Testing Checklist
 
-✅ Image upload & size validation
+* ✅ Browser compatibility: Chrome, Edge, Firefox, Safari
+* ✅ Offline caching test via Service Worker
+* ✅ Image upload & size validation
+* ✅ Undo/redo accuracy
+* ✅ PWA installability (manifest + HTTPS)
 
-✅ Undo/redo accuracy
+---
 
-✅ PWA installability (manifest + HTTPS)
+## 🛠 Development Tips
 
-🛠 Development Tips
+* Use **`gulp watch`** during development for automatic rebuilds.
+* Update **`pixie-integrate.js`** if integrating a different editor library.
+* Clear cache after each major change to `sw.js` to reload service workers.
+* Use browser dev tools → *Application > Service Workers* to debug offline features.
 
-Use gulp watch during development for automatic rebuilds.
+---
 
-Update pixie-integrate.js if integrating a different editor library.
+## 🧩 Possible Enhancements
 
-Clear cache after each major change to sw.js to reload service workers.
+* ✨ Add AI-based auto-enhance & background removal
+* ☁️ Cloud save/export integration (Google Drive, Dropbox, etc.)
+* 📱 Add gesture support for mobile editing
+* 🎞️ Layer-based editing (advanced mode)
+* 🧑‍💻 Electron build for offline desktop version
 
-Use browser dev tools → Application > Service Workers to debug offline features.
+---
 
-🧩 Possible Enhancements
-
-✨ Add AI-based auto-enhance & background removal
-
-☁️ Cloud save/export integration (Google Drive, Dropbox, etc.)
-
-📱 Add gesture support for mobile editing
-
-🎞️ Layer-based editing (advanced mode)
-
-🧑‍💻 Electron build for offline desktop version
-
-🤝 Contributing
+## 🤝 Contributing
 
 Contributions are welcome!
 If you'd like to improve PhotoEditor:
 
-Fork the repository
+1. Fork the repository
+2. Create a feature branch:
 
-Create a feature branch:
+   ```bash
+   git checkout -b feature/new-feature
+   ```
+3. Commit changes with clear messages
+4. Push and submit a Pull Request
 
-git checkout -b feature/new-feature
-Commit changes with clear messages
-Push and submit a Pull Request
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+See the [LICENSE](LICENSE) file for details.
+
+---
+
+## 📸 Preview (Optional)
+
+You can add a screenshot here once the UI is finalized:
+
+```markdown
+![PhotoEditor Preview](assets/screenshot.png)
+```
+
+---
+
+## 💬 Contact
+
+👤 **Author:** [Suchit Gaikwad](https://github.com/suchit2025)
+📧 **Email:** [suchitgaikwad10@gmail.com] 
+🌐 **Project URL:** [https://github.com/suchit2025/photoeditor](https://github.com/suchit2025/photoeditor)
+
+> *“Every picture tells a story — make yours unforgettable.”*
+
+
